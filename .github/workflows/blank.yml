@@ -44,8 +44,9 @@ jobs:
       - name: Initialize and push vendor/avalon
         run: |
           cd vendor/xiaomi/miuicamera-chenfeng
-          git lfs track "**"
           git init 
+          git lfs install
+          git lfs track "**"
           git add .
           git commit -m "first commit"
           git branch -M main 
