@@ -31,15 +31,15 @@ jobs:
       - name: Clone repositories
         run: |
           git clone https://dumps.tadiphone.dev/dumps/xiaomi/chenfeng.git -b missi-user-15-AQ3A.240912.001-OS2.0.2.0.VNJINXM-release-keys ~/holi 
-          git clone https://github.com/Fake-suns/android_device_xiaomi_miuicamera-chenfeng.git device/xiaomi/chenfeng
+          git clone https://github.com/Fake-suns/android_device_xiaomi_miuicamera-chenfeng.git device/xiaomi/miuicamera-chenfeng
           git clone https://github.com/LineageOS/android_tools_extract-utils.git tools/extract-utils
           git clone https://github.com/LineageOS/android_prebuilts_extract-tools.git prebuilts/extract-tools
 
       - name: Set up and run scripts
         run: |
           export PYTHONPATH=tools/extract-utils
-          python3 device/xiaomi/chenfeng/setup-makefiles.py ~/holi
-          python3 device/xiaomi/chenfeng/extract-files.py ~/holi
+          python3 device/xiaomi/miuicamera-chenfeng/setup-makefiles.py ~/holi
+          python3 device/xiaomi/miuicamera-chenfeng/extract-files.py ~/holi
 
       - name: Initialize and push vendor/avalon
         run: |
