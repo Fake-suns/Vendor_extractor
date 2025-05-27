@@ -30,6 +30,9 @@ jobs:
 
       - name: Set up Java
         uses: actions/setup-java@v3
+        with:
+           distribution: 'temurin' # or 'zulu', 'corretto', 'adopt', etc.
+           java-version: '21'      # or '17' depending on what apktool requires
       - name: Override JAVA executable path
         run: |
           echo "JAVA=$(which java)" >> $GITHUB_ENV
