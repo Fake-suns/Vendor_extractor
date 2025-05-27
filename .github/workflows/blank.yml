@@ -55,10 +55,12 @@ jobs:
 
       - name: Set up and run scripts
         run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
           export PYTHONPATH=tools/extract-utils
           python3 device/xiaomi/miuicamera-chenfeng/setup-makefiles.py ~/holi
           python3 device/xiaomi/miuicamera-chenfeng/extract-files.py ~/holi
-
+    
       - name: Initialize and push vendor/avalon
         run: |
           cd vendor/xiaomi/miuicamera-chenfeng
